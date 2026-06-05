@@ -1,0 +1,33 @@
+{
+  "name": "assignment-bar",
+  "version": "1.0.0",
+  "description": "macOS menu bar app for tracking assignments",
+  "main": "main.js",
+  "scripts": {
+    "start": "ELECTRON_RUN_AS_NODE= electron .",
+    "build": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "cc.seankelly.assignmentbar",
+    "productName": "AssignmentBar",
+    "asar": false,
+    "mac": {
+      "target": ["dmg", "zip"],
+      "identity": null,
+      "extendInfo": {
+        "LSEnvironment": {
+          "ELECTRON_RUN_AS_NODE": ""
+        }
+      }
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html"
+    ]
+  }
+}
